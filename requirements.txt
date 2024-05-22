@@ -1,1 +1,9 @@
-PyQt5 
+altgraph==0.17.4
+macholib==1.16.3
+packaging==24.0
+pyinstaller==6.7.0
+pyinstaller-hooks-contrib==2024.6
+PyQt5==5.15.10
+PyQt5-Qt5==5.15.13
+PyQt5-sip==12.13.0
+setuptools==70.0.0
