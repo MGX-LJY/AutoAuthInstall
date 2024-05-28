@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import shlex
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QMessageBox, QFileDialog, \
     QInputDialog, QLineEdit
 
@@ -7,25 +8,26 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout,
 # 定义执行 shell 命令的函数
 def run_command(command):
     try:
-        result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.run(shlex.split(command), check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         return result.stdout.decode('utf-8'), result.stderr.decode('utf-8')
     except subprocess.CalledProcessError as e:
         return e.stdout.decode('utf-8'), e.stderr.decode('utf-8')
+
 
 # 创建主窗口类
 class MainApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("macOS 安装助手")
-        
+
         # 创建布局
         layout = QVBoxLayout()
-        
+
         # 创建按钮并绑定功能
         self.any_source_button = QPushButton("开启“任何来源”")
         self.any_source_button.clicked.connect(self.prompt_password_for_any_source)
         layout.addWidget(self.any_source_button)
-        
+
         self.fix_damaged_button = QPushButton("修复已损坏的应用")
         self.fix_damaged_button.clicked.connect(self.prompt_password_for_fix_damaged_app)
         layout.addWidget(self.fix_damaged_button)
@@ -38,7 +40,7 @@ class MainApp(QMainWindow):
         container = QWidget()
         container.setLayout(layout)
         self.setCentralWidget(container)
-        
+
     def prompt_password_for_any_source(self):
         """提示输入密码以启用 '任何来源' 选项"""
         password, ok = QInputDialog.getText(self, "输入密码", "请输入您的系统密码:", QLineEdit.Password)
@@ -78,12 +80,14 @@ class MainApp(QMainWindow):
         msg_box.setText(message)
         msg_box.exec_()
 
+
 # 主函数
 def main():
     app = QApplication(sys.argv)
     window = MainApp()
     window.show()
     sys.exit(app.exec_())
+
 
 if __name__ == '__main__':
     main()
