@@ -27,7 +27,11 @@ class MainApp(QMainWindow):
         self.fix_damaged_button = QPushButton("修复已损坏的应用")
         self.fix_damaged_button.clicked.connect(self.prompt_password_for_fix_damaged_app)
         layout.addWidget(self.fix_damaged_button)
-        
+
+        self.quit_button = QPushButton("退出")
+        self.quit_button.clicked.connect(self.close)
+        layout.addWidget(self.quit_button)
+
         # 创建容器并设置布局
         container = QWidget()
         container.setLayout(layout)
