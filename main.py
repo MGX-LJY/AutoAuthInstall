@@ -18,17 +18,17 @@ def run_command(command):
 class MainApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("macOS 安装助手")
+        self.setWindowTitle("macOS 修复助手")
 
         # 创建布局
         layout = QVBoxLayout()
 
         # 创建按钮并绑定功能
-        self.any_source_button = QPushButton("开启“任何来源”")
+        self.any_source_button = QPushButton("开启任何来源")
         self.any_source_button.clicked.connect(self.prompt_password_for_any_source)
         layout.addWidget(self.any_source_button)
 
-        self.fix_damaged_button = QPushButton("修复已损坏的应用")
+        self.fix_damaged_button = QPushButton("修复损坏应用")
         self.fix_damaged_button.clicked.connect(self.prompt_password_for_fix_damaged_app)
         layout.addWidget(self.fix_damaged_button)
 
