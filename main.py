@@ -1,7 +1,6 @@
 import subprocess
-import sys
 import shlex
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QMessageBox, QFileDialog, \
+from PyQt5.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QMessageBox, QFileDialog, \
     QInputDialog, QLineEdit
 
 
@@ -79,6 +78,9 @@ class MainApp(QMainWindow):
         msg_box.setWindowTitle(title)
         msg_box.setText(message)
         msg_box.exec_()
+    def applicationSupportsSecureRestorableState(self):
+        """返回 True 表示应用支持恢复状态""
+        return True
 
 
 # 主函数
