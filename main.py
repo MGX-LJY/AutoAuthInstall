@@ -1,6 +1,8 @@
-import sys
 import subprocess
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QMessageBox, QFileDialog, QInputDialog, QLineEdit
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QMessageBox, QFileDialog, \
+    QInputDialog, QLineEdit
+
 
 # 定义执行 shell 命令的函数
 def run_command(command):
