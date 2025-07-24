@@ -1,28 +1,41 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-macOS 修复助手  (安全改进版)
+macOS 修复助手  (PyQt 6 版 · 安全改进)
 
 ✔ 解决缺失 import / 语法错误
 ✔ 使用 sudo -S + stdin 彻底消除 shell 注入
 ✔ 参数列表传递避免手动 quoting
-✔ returncode-based 成功/失败判断
-✔ 显示 stdout/stderr 详情
+✔ returncode-based 成功 / 失败判断
+✔ 显示 stdout / stderr 详情
 ✔ 可选「恢复默认 Gatekeeper」按钮
 ✔ 简单进度指示避免重复点击
 """
 
 import sys
 import subprocess
+import shutil
 from pathlib import Path
 from functools import partial
 
-from PyQt5.QtCore import Qt, QThread, pyqtSignal
-from PyQt5.QtWidgets import (
-    QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget,
-    QMessageBox, QFileDialog, QInputDialog, QLineEdit, QProgressDialog
+# -----------------------  PyQt 6  ------------------------ #
+from PyQt6.QtCore import (
+    Qt,
+    QThread,
+    pyqtSignal,
 )
-
+from PyQt6.QtWidgets import (
+    QApplication,
+    QMainWindow,
+    QPushButton,
+    QVBoxLayout,
+    QWidget,
+    QMessageBox,
+    QFileDialog,
+    QInputDialog,
+    QLineEdit,
+    QProgressDialog,
+)
 
 # ---------- 后台执行线程 ---------- #
 class SudoWorker(QThread):
@@ -50,7 +63,7 @@ def run_sudo(argv: list[str], password: str) -> tuple[bool, str, str]:
     使用『sudo -S -p "" …』执行命令，屏蔽默认 Password: 提示。
     """
     proc = subprocess.run(
-        ["sudo", "-S", "-p", ""] + argv,          # ← 这里加 -p ""
+        ["sudo", "-S", "-p", ""] + argv,
         input=f"{password}\n".encode(),
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
@@ -108,7 +121,7 @@ class MainApp(QMainWindow):
     # ---------- 通用密码提示 + 后台执行 ---------- #
     def _ask_password_and_run(self, title: str, argv: list[str]):
         password, ok = QInputDialog.getText(
-            self, "输入系统密码", "请输入系统密码：", QLineEdit.Password
+            self, "输入系统密码", "请输入系统密码：", QLineEdit.EchoMode.Password
         )
         if not (ok and password):
             return
@@ -124,7 +137,7 @@ class MainApp(QMainWindow):
             return
 
         password, ok = QInputDialog.getText(
-            self, "输入系统密码", "请输入系统密码：", QLineEdit.Password
+            self, "输入系统密码", "请输入系统密码：", QLineEdit.EchoMode.Password
         )
         if not (ok and password):
             return
@@ -136,9 +149,9 @@ class MainApp(QMainWindow):
     def _run_in_thread(self, title: str, argv: list[str], password: str):
         # 创建进度窗口
         self._progress = QProgressDialog(
-            f"{title} 执行中…", None, 0, 0, self, flags=Qt.Dialog
+            f"{title} 执行中…", None, 0, 0, self, flags=Qt.WindowType.Dialog
         )
-        self._progress.setWindowModality(Qt.WindowModal)
+        self._progress.setWindowModality(Qt.WindowModality.WindowModal)
         self._progress.setCancelButton(None)
         self._progress.show()
 
@@ -158,7 +171,6 @@ class MainApp(QMainWindow):
             if stdout.strip():
                 msg += f"\n\n[输出]\n{stdout.strip()}"
             if stderr.strip():
-                # 有时成功也会写 stderr
                 msg += f"\n\n[警告]\n{stderr.strip()}"
             QMessageBox.information(self, "成功", msg)
         else:
@@ -181,10 +193,11 @@ class MainApp(QMainWindow):
 # ---------- main ---------- #
 def main():
     app = QApplication(sys.argv)
-    app.setAttribute(Qt.AA_DontUseNativeMenuBar, False)  # 兼容 PyInstaller 菜单条
+    # 在 PyQt6 中枚举放在 Qt.ApplicationAttribute
+    app.setAttribute(Qt.ApplicationAttribute.AA_DontUseNativeMenuBar, False)
     window = MainApp()
     window.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 
 
 if __name__ == "__main__":
