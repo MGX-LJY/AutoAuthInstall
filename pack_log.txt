@@ -1,0 +1,92 @@
+
+44 INFO: PyInstaller: 6.14.2, contrib hooks: 2025.7
+44 INFO: Python: 3.12.4
+57 INFO: Platform: macOS-15.5-arm64-arm-64bit
+57 INFO: Python environment: /Users/martinezdavid/.aipack_venv
+58 INFO: wrote /Users/martinezdavid/Documents/MG/code/AutoAuthInstall/macOS修复助手.spec
+60 INFO: Removing temporary files and cleaning cache in /Users/martinezdavid/Library/Application Support/pyinstaller
+74 INFO: Module search paths (PYTHONPATH):
+['/Users/martinezdavid/Documents/MG/code/AIconPack',
+ '/Users/martinezdavid/Documents/MG/code/AIconPack',
+ '/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_display',
+ '/Library/Frameworks/Python.framework/Versions/3.12/lib/python312.zip',
+ '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12',
+ '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/lib-dynload',
+ '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages',
+ '/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend',
+ '/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_plotly_backend',
+ '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/setuptools/_vendor',
+ '/Users/martinezdavid/Documents/MG/code/AutoAuthInstall']
+224 INFO: checking Analysis
+224 INFO: Building Analysis because Analysis-00.toc is non existent
+224 INFO: Running Analysis Analysis-00.toc
+224 INFO: Target bytecode optimization level: 0
+224 INFO: Initializing module dependency graph...
+225 INFO: Initializing module graph hook caches...
+230 INFO: Analyzing modules for base_library.zip ...
+972 INFO: Processing standard module hook 'hook-encodings.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks'
+2000 INFO: Processing standard module hook 'hook-pickle.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks'
+2645 INFO: Processing standard module hook 'hook-heapq.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks'
+2927 INFO: Caching module dependency graph...
+2953 INFO: Looking for Python shared library...
+2956 INFO: Using Python shared library: /Library/Frameworks/Python.framework/Versions/3.12/Python
+2956 INFO: Analyzing /Users/martinezdavid/Documents/MG/code/AutoAuthInstall/main.py
+3023 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks'
+3141 INFO: Processing standard module hook 'hook-xml.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks'
+3661 INFO: Processing standard module hook 'hook-PyQt6.QtCore.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks'
+3887 INFO: Processing standard module hook 'hook-PyQt6.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks'
+4285 INFO: Processing standard module hook 'hook-PyQt6.QtWidgets.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks'
+4678 INFO: Processing standard module hook 'hook-PyQt6.QtGui.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks'
+4870 INFO: Processing module hooks (post-graph stage)...
+4887 INFO: Processing standard module hook 'hook-PyQt6.QtDBus.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks'
+5124 INFO: Performing binary vs. data reclassification (112 entries)
+5167 INFO: Looking for ctypes DLLs
+5172 INFO: Analyzing run-time hooks ...
+5173 INFO: Including run-time hook 'pyi_rth_pyqt6.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+5174 INFO: Processing pre-find-module-path hook 'hook-_pyi_rth_utils.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_find_module_path'
+5175 INFO: Processing standard module hook 'hook-_pyi_rth_utils.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks'
+5177 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+5178 INFO: Including run-time hook 'pyi_rth_inspect.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+5179 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from '/Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+5183 INFO: Creating base_library.zip...
+5212 INFO: Looking for dynamic libraries
+5501 INFO: Warnings written to /Users/martinezdavid/Documents/MG/code/AutoAuthInstall/build/macOS修复助手/warn-macOS修复助手.txt
+5509 INFO: Graph cross-reference written to /Users/martinezdavid/Documents/MG/code/AutoAuthInstall/build/macOS修复助手/xref-macOS修复助手.html
+5627 INFO: checking PYZ
+5627 INFO: Building PYZ because PYZ-00.toc is non existent
+5627 INFO: Building PYZ (ZlibArchive) /Users/martinezdavid/Documents/MG/code/AutoAuthInstall/build/macOS修复助手/PYZ-00.pyz
+5843 INFO: Building PYZ (ZlibArchive) /Users/martinezdavid/Documents/MG/code/AutoAuthInstall/build/macOS修复助手/PYZ-00.pyz completed successfully.
+5845 INFO: EXE target arch: arm64
+5845 INFO: Code signing identity: None
+5847 INFO: checking PKG
+5847 INFO: Building PKG because PKG-00.toc is non existent
+5847 INFO: Building PKG (CArchive) macOS修复助手.pkg
+5862 INFO: Building PKG (CArchive) macOS修复助手.pkg completed successfully.
+5863 INFO: Bootloader /Users/martinezdavid/.aipack_venv/lib/python3.12/site-packages/PyInstaller/bootloader/Darwin-64bit/runw
+5863 INFO: checking EXE
+5863 INFO: Building EXE because EXE-00.toc is non existent
+5863 INFO: Building EXE from EXE-00.toc
+5863 INFO: Copying bootloader EXE to /Users/martinezdavid/Documents/MG/code/AutoAuthInstall/build/macOS修复助手/macOS修复助手
+5864 INFO: Converting EXE to target arch (arm64)
+5889 INFO: Removing signature(s) from EXE
+5909 INFO: Modifying Mach-O image UUID(s) in EXE
+5912 INFO: Appending PKG archive to EXE
+5912 INFO: Fixing EXE headers for code signing
+5920 INFO: Rewriting the executable's macOS SDK version (14.5.0) to match the SDK version of the Python library (12.1.0) in order to avoid inconsistent behavior and potential UI issues in the frozen application.
+5920 INFO: Re-signing the EXE
+5943 INFO: Building EXE from EXE-00.toc completed successfully.
+5945 INFO: checking COLLECT
+5945 INFO: Building COLLECT because COLLECT-00.toc is non existent
+5945 INFO: Building COLLECT COLLECT-00.toc
+10595 INFO: Building COLLECT COLLECT-00.toc completed successfully.
+10599 INFO: checking BUNDLE
+10600 INFO: Building BUNDLE because BUNDLE-00.toc is non existent
+10600 INFO: Building BUNDLE BUNDLE-00.toc
+11589 INFO: Signing the BUNDLE...
+11611 WARNING: Error while signing the bundle: codesign command (['/usr/bin/codesign', '-s', '-', '--force', '--all-architectures', '--timestamp', '--deep', '/Users/martinezdavid/Documents/MG/code/AutoAuthInstall/dist/macOS修复助手.app']) failed with error code 1!
+output: /Users/martinezdavid/Documents/MG/code/AutoAuthInstall/dist/macOS修复助手.app: replacing existing signature
+/Users/martinezdavid/Documents/MG/code/AutoAuthInstall/dist/macOS修复助手.app: resource fork, Finder information, or similar detritus not allowed
+
+11611 WARNING: You will need to sign the bundle manually!
+11611 INFO: Building BUNDLE BUNDLE-00.toc completed successfully.
+11614 INFO: Build complete! The results are available in: /Users/martinezdavid/Documents/MG/code/AutoAuthInstall/dist
